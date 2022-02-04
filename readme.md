@@ -2,14 +2,16 @@
 
 This tiny repo replicates failing to npm install on an arm64 platform.
 
-### Building on amd86 which works
+### Building image that uses Appdynamics
 
 ```
-$ docker build --platform linux/amd64 .
+$ docker build --platform linux/amd64 . -t test
+$ docker run test
 ```
 
-### Building on arm86 which does not work
+### Building image not using Appdynamics
 
 ```
-$ docker build --platform linux/arm64 .
+$ docker-compose build test
+$ docker-compose up test
 ```
